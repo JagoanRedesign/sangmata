@@ -10,15 +10,15 @@
   "env": {
     "HEROKU_APP_NAME": {
       "description": "give your heroku name",
-      "value": ""
+      "value": "thoughtless-table"
     },
     "OWNER": {
-      "description": "1935344311",
-      "value": "1935344311"
+      "description": "1659580762",
+      "value": "1659580762"
     },
     "BOT_TOKEN": {
       "description": "Telegram Bot Token",
-      "value": ""
+      "value": "5651030839:AAGc6KBnzYuObHsmbFPUgxFB88G7h1YndAk"
     }
   }
 }
