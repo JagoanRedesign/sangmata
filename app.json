@@ -10,7 +10,7 @@
   "env": {
     "HEROKU_APP_NAME": {
       "description": "give your heroku name",
-      "value": "thoughtless-table"
+      "value": "sangmata"
     },
     "OWNER": {
       "description": "1659580762",
