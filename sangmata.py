@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from telegram import Update,KeyboardButton,ReplyKeyboardMarkup
 from telegram.ext import Updater, CommandHandler,CallbackContext, MessageHandler,Filters
 import os
-PORT = int(os.environ.get('PORT','35.230.85.45'))
+PORT = int(os.environ.get('PORT','8443'))
 TOKEN = os.environ.get('BOT_TOKEN',None)
 HEROKU_APP_NAME=os.environ.get('HEROKU_APP_NAME',None)
 owner=os.environ.get('OWNER',None)
@@ -187,11 +187,11 @@ dispatcher.add_handler(MessageHandler(Filters.chat_type.private,start))
 dispatcher.add_error_handler(error)
 
 
-updater.start_webhook(listen="35.230.85.45",
+updater.start_webhook(listen="8443",
                           port=int(PORT),
                           url_path=TOKEN)
 updater.bot.setWebhook('https://sangmata-production.up.railway.app/' + TOKEN)
-updater.start_webhook(listen="35.230.85.45",
+updater.start_webhook(listen="8443",
 
                       port=PORT,
 
