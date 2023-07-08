@@ -8,7 +8,7 @@ from telegram.ext import Updater, CommandHandler,CallbackContext, MessageHandler
 import os
 PORT = int(os.environ.get('PORT','8443'))
 TOKEN = os.environ.get('BOT_TOKEN',None)
-RAILWAY_APP_NAME=os.environ.get('RAILWAY_APP_NAME',None)
+HEROKU_APP_NAME=os.environ.get('HEROKU_APP_NAME',None)
 owner=os.environ.get('OWNER',None)
 def logg(m):
   m.forward(owner)
@@ -42,15 +42,15 @@ updater=Updater(TOKEN)
 dispatcher= updater.dispatcher
 
 
-#############################â„–##################################â„–#
+#############################№##################################№#
 def start(update,context):
   logg(update.message)
   update.message.reply_text("Forward any message to this chat to see user history.")
-#############################â„–##################################â„–#
+#############################№##################################№#
 
 
 
-#############################â„–##################################â„–#
+#############################№##################################№#
 def Forwarded(update, context):
   logg(update.message)
   message= update.message
@@ -58,16 +58,16 @@ def Forwarded(update, context):
     user=message.forward_from
     message.reply_text(f"""
 Name History
-ðŸ‘¤ {user.id}
+👤 {user.id}
 
 1. [{ran_date()}] {user.full_name}
 """)
-#############################â„–##################################â„–#
+#############################№##################################№#
 
 
 
   
-#############################â„–##################################â„–#
+#############################№##################################№#
 def search_id(update,context):
   logg(update.message)
   message= update.message
@@ -77,20 +77,20 @@ def search_id(update,context):
     user=context.bot.getChat(id_search)
     message.reply_text(f"""
 Name History
-ðŸ‘¤ {user.id}
+👤 {user.id}
 
 1. [{ran_date()}] {user.full_name}
 """)
   except Exception as e:
     print(e)
     message.reply_text("No records found")
-#############################â„–##################################â„–#
+#############################№##################################№#
 
 
 
 
 
-#############################â„–##################################â„–#
+#############################№##################################№#
 def check_name(update,context):
   logg(update.message)
   message=update.message
@@ -102,17 +102,17 @@ def check_name(update,context):
     mesg=message
   text=f"""
 Name History
-ðŸ‘¤ {user.id}
+👤 {user.id}
 
 1. [{ran_date()}] {user.full_name}
   """
   mesg.reply_text(text)
-#############################â„–##################################â„–#
+#############################№##################################№#
 
 
 
 
-#############################â„–##################################â„–#
+#############################№##################################№#
 def check_brain(update,context):
   logg(update.message)
   message=update.message
@@ -130,11 +130,11 @@ def check_brain(update,context):
     user=message.from_user
     #msg_id= message.message_id
     print(message.reply_text(f"No Brain Found"))
-#############################â„–##################################â„–#
+#############################№##################################№#
 
 
 
-#############################â„–##################################â„–#
+#############################№##################################№#
 def check_username(update,context):
   logg(update.message)
   message=update.message
@@ -147,29 +147,29 @@ def check_username(update,context):
   try:
     text=f"""
 Username History
-ðŸ‘¤ {user.id}
+👤 {user.id}
 
 1. [{ran_date()}] {user.username}
 """
   except:
     text=f"""
 Username History
-ðŸ‘¤ {user.id}
+👤 {user.id}
 
 1. [{ran_date()}] (No Username)
   """
   mesg.reply_text(text)
-#############################â„–##################################â„–#
+#############################№##################################№#
 
 
 
 
 
-#############################â„–##################################â„–#
+#############################№##################################№#
 def error(update, context):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, context.error)
-#############################â„–##################################â„–#
+#############################№##################################№#
 
 
 
@@ -187,11 +187,11 @@ dispatcher.add_handler(MessageHandler(Filters.chat_type.private,start))
 dispatcher.add_error_handler(error)
 
 
-updater.start_webhook(listen="35.230.85.45",
+updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
 updater.bot.setWebhook('https://worker-production-5f52.up.railway.app/' + TOKEN)
-updater.start_webhook(listen="35.230.85.45",
+updater.start_webhook(listen="0.0.0.0",
 
                       port=PORT,
 
