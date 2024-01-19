@@ -19,7 +19,7 @@
     "BOT_TOKEN": {
       "description": "Telegram Bot Token",
       "value": "5987246649:AAEY6PbuAw6_Y-OpbN2KfWahDQnGuJCcLxE"
-    }
+    },
     "PORT": {
       "description": "Port",
       "value": ""
