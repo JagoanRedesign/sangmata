@@ -8,7 +8,7 @@
   ],
   "repository": "https://github.com/JagoanRedesign/sangmata",
   "env": {
-    "RAILWAY_APP_NAME": {
+    "HEROKU_APP_NAME": {
       "description": "give your railway name",
       "value": "sangmata-production"
     },
@@ -19,6 +19,10 @@
     "BOT_TOKEN": {
       "description": "Telegram Bot Token",
       "value": "5987246649:AAEY6PbuAw6_Y-OpbN2KfWahDQnGuJCcLxE"
+    }
+    "PORT": {
+      "description": "Port",
+      "value": ""
     }
   }
 }
