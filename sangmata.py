@@ -190,14 +190,14 @@ dispatcher.add_error_handler(error)
 updater.start_webhook(listen=PORT,
                           port=int(PORT),
                           url_path=TOKEN)
-updater.bot.setWebhook(HEROKU_APP_NAME + TOKEN)
+updater.bot.setWebhook('https://'+HEROKU_APP_NAME+'.herokuapp.com/' + TOKEN)
 updater.start_webhook(listen=PORT,
 
                       port=PORT,
 
                       url_path=TOKEN,
 
-                      webhook_url=HEROKU_APP_NAME + TOKEN)
+                      webhook_url='https://'+HEROKU_APP_NAME+'.herokuapp.com/' + TOKEN)
 
 updater.idle()
 
