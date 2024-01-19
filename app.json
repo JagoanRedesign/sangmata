@@ -22,7 +22,7 @@
     },
     "PORT": {
       "description": "Port",
-      "value": ""
+      "value": "80"
     }
   }
 }
